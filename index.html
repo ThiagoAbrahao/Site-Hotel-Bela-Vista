@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="partes/favicon.png">
+    <title>Hotel Bela Vista</title>
+    <!-- Tailwind CSS (via CDN para funcionar direto) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos adicionais se necessário */
+        body { font-family: sans-serif; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Navegação -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">
+                <img src="partes/logo.png" alt="Logo Hotel Bela Vista" class="h-12 w-auto object-contain">
+            </div>
+
+            <!-- Menu no computador --> 
+            <div id="desktop-menu" class="hidden md:flex space-x-8 text-white">
+                <a href="#home" class="hover:text-amber-500 font-medium transition">Home</a>
+                <a href="#infraestrutura" class="hover:text-amber-500 font-medium transition">Infraestrutura</a>
+                <a href="#localizacao" class="hover:text-amber-500 font-medium transition">Localização</a>
+                <a href="#contatos" class="hover:text-amber-500 font-medium transition">Contatos</a>
+            </div>
+
+            <!-- Menu botão mobile -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <!-- ícone do enu -->
+                    <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+                    <!-- ícone X (escondido) -->
+                    <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile "Sanduíche" -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-xl top-full left-0">
+            <div class="flex flex-col items-center py-4 space-y-4">
+                <a href="#home" class="text-gray-800 hover:text-amber-500 mobile-link">Home</a>
+                <a href="#infraestrutura" class="text-gray-800 hover:text-amber-500 mobile-link">Infraestrutura</a>
+                <a href="#localizacao" class="text-gray-800 hover:text-amber-500 mobile-link">Localização</a>
+                <a href="#contatos" class="text-gray-800 hover:text-amber-500 mobile-link">Contatos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção HOME -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <!-- Image fundo -->
+        <div class="absolute inset-0 z-0">
+            <img src="partes/localizacao.jpg" alt="Hotel Luxury View" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4">
+            <div class="mb-4 flex justify-center text-amber-400 gap-1">
+                <!-- 5 estrelas -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Hotel Bela Vista</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto">
+                Conforto, tranquilidade, bom atendimento e localização estratégica em Brasília!
+            </p>
+            <button onclick="window.open('https://wa.me/556134081414', '_blank')" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition transform hover:scale-105">
+                Reservar agora!
+            </button>
+        </div>
+    </section>
+
+    <!-- Seção INFRAESTRUTURA -->
+    <section id="infraestrutura" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Nossa Infraestrutura</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Pensamos em cada detalhe para sua estádia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Conectividade & Lazer (Com Carrossel Interno) -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition">
+                    <!-- Container carousel -->
+                    <div class="relative h-64 overflow-hidden group/carousel">
+                        <!-- Botão Anterior -->
+                        <button onclick="moveMiniCarousel(1, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        
+                        <!-- Botão Próximo -->
+                        <button onclick="moveMiniCarousel(1, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+
+                        <!-- Track de Imagens -->
+                        <div id="track-1" class="flex h-full transition-transform duration-500 ease-out">
+                            <img src="partes/estudo2.png" alt="Piscina 1" class="min-w-full h-full object-cover">
+                            <img src="partes/estudo2.png" alt="Piscina 2" class="min-w-full h-full object-cover">
+                            <img src="partes/estudo2.png" alt="Área Externa" class="min-w-full h-full object-cover">
+                            <img src="partes/estudo2.png" alt="Área Externa" class="min-w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <div class="bg-amber-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto -mt-12 relative z-10 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Conectividade & Lazer</h3>
+                        <p class="text-gray-600">Wi-Fi de alta velocidade em todas as áreas, proporcionando rápida informação para o seu trabalho.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Suítes Premium -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition">
+                    <div class="relative h-64 overflow-hidden group/carousel">
+                        <!-- Botões -->
+                        <button onclick="moveMiniCarousel(2, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button onclick="moveMiniCarousel(2, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+
+                        <!-- Track de Imagens -->
+                        <div id="track-2" class="flex h-full transition-transform duration-500 ease-out">
+                            <img src="partes/quartoluxo.png" alt="Quarto 1" class="min-w-full h-full object-cover">
+                            <img src="partes/quarto2.jpg" alt="Quarto 2" class="min-w-full h-full object-cover">
+                            <img src="partes/quarto3.jpg" alt="Quarto 3" class="min-w-full h-full object-cover">
+                            <img src="partes/quarto4.jpg" alt="Quarto 2" class="min-w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <div class="bg-amber-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto -mt-12 relative z-10 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Suítes Premium</h3>
+                        <p class="text-gray-600">Quartos espaçosos arejados com varandas, com roupas de cama novas, smart TVs e ar condicionados.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Gastronomia -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition">
+                    <div class="relative h-64 overflow-hidden group/carousel">
+                        <!-- Botões -->
+                        <button onclick="moveMiniCarousel(3, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button onclick="moveMiniCarousel(3, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+
+                        <!-- Track de Imagens -->
+                        <div id="track-3" class="flex h-full transition-transform duration-500 ease-out">
+                            <img src="partes/restaurante1.JPG" alt="Comida 1" class="min-w-full h-full object-cover">
+                            <img src="partes/restaurante2.jpg" alt="Comida 2" class="min-w-full h-full object-cover">
+                            <img src="partes/restaurante3.jpg" alt="Comida 3" class="min-w-full h-full object-cover">
+                            <img src="partes/restaurante4.jpg" alt="Comida 2" class="min-w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <div class="bg-amber-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto -mt-12 relative z-10 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Gastronomia</h3>
+                        <p class="text-gray-600">Conta com café da manhã incluso na diária e completo com diversas variedades.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Seção LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Localização Privilegiada</h2>
+                <div class="w-16 h-1 bg-amber-500 mb-6"></div>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Com localização estratégica, o Hotel Bela Vista está situado em uma região privilegiada de Brasília, oferecendo fácil acesso aos principais pontos turísticos, administrativos e comerciais da cidade. À 20 minutos da Esplanada dos Ministérios, e das às Asas Sul e Norte, bem como aos Lagos Sul e Norte, o hotel proporciona aos seus hóspedes tranquilidade, conforto e conveniência, aliando mobilidade urbana a um ambiente acolhedor e funcional!
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <!-- PIN do mapa (ícone) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Av. Paranoa, Qd. 10, conj 4, Lot 17/18, Paranoá - Brasília/DF</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        <span>10 min da Ermida Dom Bosco</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        <span>28 min do Aeroporto Internacional de Brasília</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        <span>25 min da Esplanada dos Ministérios</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 w-full h-80 bg-gray-200 rounded-xl overflow-hidden shadow-inner relative">
+                <!-- Iframe do Google Maps -->
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.5327860335337!2d-47.7793798!3d-15.775836499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3d844c80ef95%3A0xd290e0a46c59880f!2sHotel%20Bela%20Vista!5e0!3m2!1spt-BR!2sbr!4v1764345330607!5m2!1spt-BR!2sbr" title="Mapa de Localização"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção CONTATOS (formulário a acrescentar) -->
+    <section id="contatos" class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10">
+                 <h2 class="text-3xl font-bold mb-4">Entre em Contato</h2>
+                 <p class="text-gray-400 max-w-2xl mx-auto">
+                    Tem alguma dúvida ou gostaria de fazer uma solicitação especial? 
+                    Nossa equipe está pronta para atender você pelos canais abaixo.
+                 </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+                <!-- Telefone -->
+                <div class="flex flex-col items-center bg-slate-800 p-8 rounded-xl shadow-lg w-full md:w-1/3 hover:bg-slate-700 transition">
+                    <div class="bg-slate-900 p-4 rounded-full mb-4">
+                        <!-- telefone ícone -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-2">Telefone</p>
+                    <p class="text-2xl font-bold">(61) 3408 2122</p>
+                </div>
+
+                <!-- Email -->
+                <div class="flex flex-col items-center bg-slate-800 p-8 rounded-xl shadow-lg w-full md:w-1/3 hover:bg-slate-700 transition">
+                    <div class="bg-slate-900 p-4 rounded-full mb-4">
+                        <!-- Email ícone -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-2">Email</p>
+                    <p class="text-xl font-bold">reservas@hotelbelavistabsb.com.br</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Hotel Bela Vista. Todos os direitos reservados.</p>
+        <a href="https://www.instagram.com/_.thiagolima._?igsh=a3o1YWo4eDdveW4w">Desenvolvido por Thiago (61) 9 8140-4302</a>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/556134081414" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 transition hover:scale-110 flex items-center justify-center" aria-label="Falar no WhatsApp">
+        <!-- ícone do símbolo do whatsapp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </a>
+
+    <!-- Script em JS -->
+    <script src="script.js"></script>
+</body>
+</html>
